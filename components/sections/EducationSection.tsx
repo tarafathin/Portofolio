@@ -19,12 +19,10 @@ export default function EducationSection() {
       className="section-padding"
       style={{ background: "#F8F2E4", color: "var(--text-dark)" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         
         {/* Education & Achievements Original Layout */}
-        <div className="mb-4 text-left">
-          <SectionLabel label="EDUCATION & ACHIEVEMENTS" dark />
-        </div>
+        <SectionLabel label="EDUCATION & ACHIEVEMENTS" />
 
         <div className="grid md:grid-cols-2 gap-10 mt-12 items-start mb-24">
           
@@ -195,16 +193,16 @@ export default function EducationSection() {
   );
 }
 
-function SectionLabel({ label, dark = false }: { label: string; dark?: boolean }) {
+function SectionLabel({ label }: { label: string }) {
   return (
-    <span
-      className="text-sm font-bold tracking-widest uppercase"
-      style={{
-        color: dark ? "var(--accent)" : "var(--accent)",
-        fontFamily: "Syne, sans-serif",
-      }}
-    >
-      {label}
-    </span>
+    <div className="flex items-center gap-3">
+      <span className="w-8 h-px" style={{ background: "var(--accent)" }} />
+      <span
+        className="text-xs font-bold tracking-widest uppercase"
+        style={{ color: "var(--accent)", fontFamily: "Syne, sans-serif" }}
+      >
+        {label}
+      </span>
+    </div>
   );
 }

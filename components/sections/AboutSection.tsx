@@ -9,11 +9,12 @@ export default function AboutSection() {
       className="section-padding"
       style={{ background: "var(--cream-50, #FEFCF7)", color: "var(--text-dark)" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Section label matching Image 2 style */}
-        <div className="mb-4 text-left">
+        <div className="flex items-center gap-3">
+          <span className="w-8 h-px" style={{ background: "var(--accent)" }} />
           <span
-            className="text-sm font-bold tracking-widest uppercase"
+            className="text-xs font-bold tracking-widest uppercase"
             style={{
               color: "var(--accent)",
               fontFamily: "Syne, sans-serif",
@@ -23,7 +24,7 @@ export default function AboutSection() {
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-12 md:gap-20 justify-between items-start">
+        <div className="mt-12 flex flex-col md:flex-row gap-12 md:gap-20 justify-between items-start">
           {/* Left Column: Heading + Underline + Paragraphs */}
           <div className="flex flex-col max-w-3xl w-full text-left">
             <h2
