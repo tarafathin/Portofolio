@@ -85,7 +85,7 @@ export const PROJECTS = [
     highlight: "Published on Google Play Store",
     role: "UI/UX Designer + Scrum Master",
     links: {
-      playStore: "#", // Tambahkan link Play Store di sini
+      playStore: "https://play.google.com/store/apps/details?id=com.nutrifier.app",
     },
   },
   {
@@ -106,7 +106,7 @@ export const PROJECTS = [
     highlight: "Health Tech App",
     role: "Mobile Developer & UI/UX Designer",
     links: {
-      github: "#", // Tambahkan link GitHub di sini
+      github: "https://github.com/orgs/PulmoCareApp/repositories",
       figma: "#", // Tambahkan link Figma di sini
     },
   },
@@ -128,7 +128,7 @@ export const PROJECTS = [
     highlight: "Secure with PDO prepared statements",
     role: "Full Stack Developer",
     links: {
-      github: "#", // Tambahkan link GitHub di sini
+      github: "https://github.com/tarafathin/website-restorant",
     },
   },
   {
@@ -150,7 +150,7 @@ export const PROJECTS = [
     role: "UI/UX Designer",
     links: {
       figma: "#", // Tambahkan link Figma di sini
-      github: "#", // Tambahkan link GitHub di sini
+      github: "https://github.com/ItzRaxen/GODuls-Pesan-TIket-Mudah",
     },
   },
 ];

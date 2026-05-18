@@ -65,11 +65,12 @@ export default function HeroSection() {
           {/* Circular Photo Frame */}
           <div className="relative z-10 w-[30vh] h-[30vh] sm:w-[35vh] sm:h-[35vh] lg:w-[45vh] lg:h-[45vh] rounded-full overflow-hidden border-[6px] md:border-[8px] border-[#E8A020] shadow-2xl bg-gray-100">
             <Image
-              src="/hero-image.jpg"
+              src="/hero-image.jpeg"
               alt={PROFILE.name}
               fill
               className="object-cover"
               priority
+              unoptimized
             />
           </div>
 
