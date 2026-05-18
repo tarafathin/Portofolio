@@ -84,6 +84,9 @@ export const PROJECTS = [
     tools: ["Flutter", "Dart", "Laravel 12", "PostgreSQL", "Figma", "JWT", "Supabase"],
     highlight: "Published on Google Play Store",
     role: "UI/UX Designer + Scrum Master",
+    links: {
+      playStore: "#", // Tambahkan link Play Store di sini
+    },
   },
   {
     id: "pulmocare",
@@ -102,6 +105,10 @@ export const PROJECTS = [
     tools: ["Flutter", "Dart", "Supabase", "PostgreSQL"],
     highlight: "Health Tech App",
     role: "Mobile Developer & UI/UX Designer",
+    links: {
+      github: "#", // Tambahkan link GitHub di sini
+      figma: "#", // Tambahkan link Figma di sini
+    },
   },
   {
     id: "food-order",
@@ -120,6 +127,9 @@ export const PROJECTS = [
     tools: ["PHP", "MySQL", "PDO", "JavaScript", "HTML5", "CSS3"],
     highlight: "Secure with PDO prepared statements",
     role: "Full Stack Developer",
+    links: {
+      github: "#", // Tambahkan link GitHub di sini
+    },
   },
   {
     id: "goduls",
@@ -138,6 +148,10 @@ export const PROJECTS = [
     tools: ["Laravel", "PHP", "MySQL", "Vite.js", "Composer"],
     highlight: "Fast transaction & booking system",
     role: "UI/UX Designer",
+    links: {
+      figma: "#", // Tambahkan link Figma di sini
+      github: "#", // Tambahkan link GitHub di sini
+    },
   },
 ];
 

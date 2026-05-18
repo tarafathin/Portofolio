@@ -126,6 +126,58 @@ export default function ProjectsSection() {
                 <CaseBlock icon="🔍" title="Problem" text={project.problem} />
                 <CaseBlock icon="💡" title="Solution" text={project.solution} />
                 <CaseBlock icon="🧠" title="UX Thinking" text={project.uxThinking} />
+                
+                {/* Action Buttons */}
+                {(project as any).links && (
+                  <div className="flex flex-wrap items-center gap-3 mt-2">
+                    {(project as any).links.playStore && (
+                      <a
+                        href={(project as any).links.playStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105 shadow-md hover:shadow-lg"
+                        style={{ background: "#2D5A3D", color: "#FFFFFF", fontFamily: "Syne, sans-serif" }}
+                      >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M4 2.522v18.956c0 .543.585.86 1.03.543l14.829-10.02a.663.663 0 000-1.085L5.03 1.979C4.585 1.662 4 1.979 4 2.522z" />
+                        </svg>
+                        Get it on Play Store
+                      </a>
+                    )}
+                    {(project as any).links.github && (
+                      <a
+                        href={(project as any).links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105 border-2"
+                        style={{ borderColor: "#0A120A", color: "#0A120A", fontFamily: "Syne, sans-serif" }}
+                      >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        GitHub Repo
+                      </a>
+                    )}
+                    {(project as any).links.figma && (
+                      <a
+                        href={(project as any).links.figma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105 border-2"
+                        style={{ borderColor: "var(--accent)", color: "#0A120A", fontFamily: "Syne, sans-serif" }}
+                      >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                          <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+                          <path d="M12 9H8.5a3.5 3.5 0 1 0 0 7H12V9z"></path>
+                          <path d="M12 16H8.5a3.5 3.5 0 1 0 0 7H12v-7z"></path>
+                          <path d="M12 9v7c0 1.93 1.57 3.5 3.5 3.5S19 17.93 19 16c0-1.93-1.57-3.5-3.5-3.5H12z"></path>
+                        </svg>
+                        Figma Design
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Footer — tools + role */}
