@@ -121,21 +121,21 @@ export const PROJECTS = [
     role: "Full Stack Developer",
   },
   {
-    id: "hotel-search",
-    title: "Hotel Search System",
-    subtitle: "Data-Driven Hotel Finder",
-    period: "May 2025 – Jun 2025",
-    badge: "Web App",
-    color: "#3A7D44",
+    id: "goduls",
+    title: "GODuls",
+    subtitle: "Platform Pemesanan Tiket Digital & Manajemen Transaksi",
+    period: "Feb 2026 - Present",
+    badge: "Web Application",
+    color: "#D9534F", // A nice red/accent color, can be changed if needed
     problem:
-      "Pengguna membutuhkan cara yang efisien untuk menemukan hotel terbaik berdasarkan rating dan lokasi, tanpa harus membuka banyak tab.",
+      "Pengguna kesulitan mencari dan memesan tiket secara cepat karena sistem yang lambat dan tidak terintegrasi.",
     solution:
-      "Sistem pencarian hotel dengan visualisasi data interaktif menggunakan Chart.js dan antarmuka modern berbasis Tailwind CSS.",
+      "Aplikasi web modern berbasis Laravel dengan performa tinggi. Menyediakan fitur pencarian tiket yang efisien, sistem booking terstruktur, dan manajemen transaksi yang aman.",
     uxThinking:
-      "Fokus pada informasi hierarchy — data paling relevan (rating & lokasi) ditampilkan pertama, didukung visualisasi chart untuk perbandingan cepat.",
-    tools: ["PHP", "JavaScript", "Tailwind CSS", "Chart.js", "GitHub"],
-    highlight: "Location-based search + data visualization",
-    role: "Full Stack Developer",
+      "Fokus pada kelancaran transaksi dengan alur pemesanan yang minim langkah, feedback sistem yang jelas, dan dashboard yang intuitif.",
+    tools: ["Laravel", "PHP", "MySQL", "Vite.js", "Composer"],
+    highlight: "Fast transaction & booking system",
+    role: "UI/UX Designer",
   },
 ];
 
