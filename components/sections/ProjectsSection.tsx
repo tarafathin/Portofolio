@@ -172,19 +172,15 @@ export default function ProjectsSection() {
             >
               {/* Jika project memiliki gambar, tampilkan Image. Jika tidak, tampilkan placeholder */}
               {(project as any).image ? (
-                <div 
-                  className="relative flex-1 min-h-[400px] md:min-h-[500px] w-full rounded-2xl overflow-hidden border flex items-center justify-center" 
-                  style={{ borderColor: "rgba(232,160,32,0.2)", background: "rgba(0,0,0,0.2)" }}
-                >
-                  <div className="relative w-full h-full p-4">
-                    <Image
-                      src={(project as any).image}
-                      alt={`Mockup ${project.title}`}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 380px"
-                    />
-                  </div>
+                <div className="relative w-full flex-1 flex items-center justify-center">
+                  <Image
+                    src={(project as any).image}
+                    alt={`Mockup ${project.title}`}
+                    width={500}
+                    height={1000}
+                    className="w-full h-auto object-contain drop-shadow-2xl"
+                    sizes="(max-width: 768px) 100vw, 380px"
+                  />
                 </div>
               ) : (
                 /* Visual placeholder (portrait) */

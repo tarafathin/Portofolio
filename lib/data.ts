@@ -110,6 +110,7 @@ export const PROJECTS = [
     period: "May 2025 – Jun 2025",
     badge: "Web App",
     color: "#5B4FCF",
+    image: "/projects/food.jpeg",
     problem:
       "Restoran kecil membutuhkan sistem pemesanan digital yang aman, mudah digunakan, dan bisa dikelola tanpa keahlian teknis tinggi.",
     solution:
@@ -127,6 +128,7 @@ export const PROJECTS = [
     period: "Feb 2026 - Present",
     badge: "Web Application",
     color: "#D9534F", // A nice red/accent color, can be changed if needed
+    image: "/projects/GODuls.png",
     problem:
       "Pengguna kesulitan mencari dan memesan tiket secara cepat karena sistem yang lambat dan tidak terintegrasi.",
     solution:
