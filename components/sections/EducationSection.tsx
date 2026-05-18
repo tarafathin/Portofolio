@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { EDUCATION, ACHIEVEMENTS } from "@/lib/data";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function EducationSection() {
   const [modalImage, setModalImage] = useState<string | null>(null);
@@ -29,8 +30,12 @@ export default function EducationSection() {
           {/* Left — education */}
           <div className="flex flex-col gap-6">
             {EDUCATION.map((edu, i) => (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.15 }}
                 className="p-6 rounded-2xl border bg-white"
                 style={{
                   borderColor: "rgba(10,18,10,0.08)",
@@ -89,15 +94,19 @@ export default function EducationSection() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Right — achievements */}
           <div className="flex flex-col gap-4">
             {ACHIEVEMENTS.map((a, i) => (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.15 }}
                 onClick={() => openModal(a.image)}
                 className="group flex items-start justify-between gap-4 p-5 rounded-2xl border bg-white cursor-pointer hover:border-[#E8A020] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
                 style={{
@@ -135,7 +144,7 @@ export default function EducationSection() {
                     <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
           

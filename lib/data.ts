@@ -72,7 +72,7 @@ export const PROJECTS = [
     title: "Nutrify",
     subtitle: "Mobile Calorie Tracking App",
     period: "Feb 2026 – Present",
-    badge: "Live on Play Store 🚀",
+    badge: "Live on Play Store",
     color: "#E8A020",
     image: "/projects/nutrify.jpeg",
     problem:
@@ -107,12 +107,11 @@ export const PROJECTS = [
     role: "Mobile Developer & UI/UX Designer",
     links: {
       github: "https://github.com/orgs/PulmoCareApp/repositories",
-      figma: "#", // Tambahkan link Figma di sini
     },
   },
   {
     id: "food-order",
-    title: "Food Order System",
+    title: "CompileTaste",
     subtitle: "Restaurant Management CRUD",
     period: "May 2025 – Jun 2025",
     badge: "Web App",
@@ -149,7 +148,6 @@ export const PROJECTS = [
     highlight: "Fast transaction & booking system",
     role: "UI/UX Designer",
     links: {
-      figma: "#", // Tambahkan link Figma di sini
       github: "https://github.com/ItzRaxen/GODuls-Pesan-TIket-Mudah",
     },
   },

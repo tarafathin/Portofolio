@@ -1,6 +1,7 @@
 "use client";
 
 import { PROFILE } from "@/lib/data";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -81,23 +82,26 @@ export default function ContactSection() {
             </a>
 
             {/* Social links */}
-            <div className="flex items-center justify-center gap-6 mt-12">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-12">
               <ContactLink
                 href={`mailto:${PROFILE.email}`}
                 label="Email"
                 sub={PROFILE.email}
+                icon={Mail}
               />
               <Divider />
               <ContactLink
                 href={PROFILE.linkedin}
                 label="LinkedIn"
                 sub="tara-adilah-fathin"
+                icon={Linkedin}
               />
               <Divider />
               <ContactLink
                 href={PROFILE.github}
                 label="GitHub"
                 sub="tarafathin"
+                icon={Github}
               />
             </div>
           </div>
@@ -111,38 +115,44 @@ function ContactLink({
   href,
   label,
   sub,
+  icon: Icon,
 }: {
   href: string;
   label: string;
   sub: string;
+  icon: any;
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="group flex flex-col items-center gap-1"
-    >
+    <div className="flex flex-col items-center gap-2">
       <span
-        className="text-xs font-bold tracking-widest uppercase group-hover:text-amber-400 transition-colors"
+        className="text-xs font-bold tracking-widest uppercase"
         style={{ color: "var(--accent)", fontFamily: "Syne, sans-serif" }}
       >
-        {label} ↗
+        {label}
       </span>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="text-[#E8A020] hover:scale-110 hover:text-amber-400 transition-all p-1"
+        aria-label={label}
+      >
+        <Icon size={24} />
+      </a>
       <span
         className="text-xs"
         style={{ color: "var(--cream-muted)", fontFamily: "Inter, sans-serif" }}
       >
         {sub}
       </span>
-    </a>
+    </div>
   );
 }
 
 function Divider() {
   return (
     <div
-      className="h-8 w-px"
+      className="hidden sm:block h-8 w-px"
       style={{ background: "rgba(240,234,214,0.15)" }}
     />
   );

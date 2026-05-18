@@ -3,23 +3,22 @@
 import { useState } from "react";
 import { PROJECTS } from "@/lib/data";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProjectsSection() {
   const [active, setActive] = useState(0);
   const project = PROJECTS[active];
 
   return (
-    <section
-      id="projects"
-      className="section-padding"
-      style={{ background: "#F8F2E4" }}
-    >
+    <section id="projects" className="section-padding overflow-hidden" style={{ background: "#F8F2E4" }}>
       <div className="max-w-6xl mx-auto px-6">
-        {/* Label */}
         <SectionLabel label="Featured Projects" />
 
         <div className="mt-12 flex flex-col gap-4">
-          <h2
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="font-display font-black leading-tight"
             style={{
               fontFamily: "Syne, sans-serif",
@@ -31,23 +30,33 @@ export default function ProjectsSection() {
             <span style={{ color: "var(--accent)" }}>solves</span>
             <br />
             real problems.
-          </h2>
-          <p
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
             className="text-sm max-w-md"
             style={{ color: "#6A7A6A", fontFamily: "Inter, sans-serif" }}
           >
             Setiap project dikerjakan dengan pendekatan UX thinking — dari
             riset masalah hingga solusi final yang terukur.
-          </p>
+          </motion.p>
         </div>
 
         {/* Tab pills */}
-        <div className="flex flex-wrap gap-2 mt-10 mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-wrap gap-2 mt-10 mb-8"
+        >
           {PROJECTS.map((p, i) => (
             <button
               key={p.id}
               onClick={() => setActive(i)}
-              className="text-sm px-4 py-2 rounded-full font-semibold transition-all duration-200"
+              className="text-sm px-4 py-2 rounded-full font-semibold transition-all duration-200 hover:scale-105"
               style={{
                 fontFamily: "Syne, sans-serif",
                 background: active === i ? "var(--accent)" : "rgba(10,18,10,0.06)",
@@ -60,16 +69,20 @@ export default function ProjectsSection() {
               {p.title}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Case study card */}
-        <div
+        <AnimatePresence mode="wait">
+        <motion.div
           key={project.id}
-          className="rounded-3xl overflow-hidden border"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="rounded-3xl overflow-hidden border shadow-sm"
           style={{
             background: "var(--bg-primary)",
             borderColor: "rgba(232,160,32,0.15)",
-            animation: "fadeIn 0.35s ease",
           }}
         >
           {/* Header bar */}
@@ -123,10 +136,10 @@ export default function ProjectsSection() {
             <div className="flex-1 flex flex-col">
               {/* Case study body */}
               <div className="px-8 py-8 flex flex-col gap-8 flex-1">
-                <CaseBlock icon="🔍" title="Problem" text={project.problem} />
-                <CaseBlock icon="💡" title="Solution" text={project.solution} />
-                <CaseBlock icon="🧠" title="UX Thinking" text={project.uxThinking} />
-                
+                <CaseBlock title="Problem" text={project.problem} />
+                <CaseBlock title="Solution" text={project.solution} />
+                <CaseBlock title="UX Thinking" text={project.uxThinking} />
+
                 {/* Action Buttons */}
                 {(project as any).links && (
                   <div className="flex flex-wrap items-center gap-3 mt-2">
@@ -156,24 +169,6 @@ export default function ProjectsSection() {
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                         GitHub Repo
-                      </a>
-                    )}
-                    {(project as any).links.figma && (
-                      <a
-                        href={(project as any).links.figma}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105 shadow-md hover:shadow-lg"
-                        style={{ background: "#2D5A3D", color: "#FFFFFF", fontFamily: "Syne, sans-serif" }}
-                      >
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
-                          <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
-                          <path d="M12 9H8.5a3.5 3.5 0 1 0 0 7H12V9z"></path>
-                          <path d="M12 16H8.5a3.5 3.5 0 1 0 0 7H12v-7z"></path>
-                          <path d="M12 9v7c0 1.93 1.57 3.5 3.5 3.5S19 17.93 19 16c0-1.93-1.57-3.5-3.5-3.5H12z"></path>
-                        </svg>
-                        Figma Design
                       </a>
                     )}
                   </div>
@@ -258,14 +253,15 @@ export default function ProjectsSection() {
               )}
             </div>
           </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Navigation arrows */}
         <div className="flex items-center gap-4 mt-6 justify-end">
           <button
             onClick={() => setActive((p) => Math.max(0, p - 1))}
             disabled={active === 0}
-            className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors"
+            className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors hover:bg-[#E8A020] hover:border-[#E8A020] hover:text-white hover:scale-110 disabled:hover:bg-transparent disabled:hover:border-[rgba(10,18,10,0.15)] disabled:hover:text-[#C0C8C0] disabled:hover:scale-100"
             style={{
               borderColor: "rgba(10,18,10,0.15)",
               color: active === 0 ? "#C0C8C0" : "#0A120A",
@@ -285,7 +281,7 @@ export default function ProjectsSection() {
               setActive((p) => Math.min(PROJECTS.length - 1, p + 1))
             }
             disabled={active === PROJECTS.length - 1}
-            className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors"
+            className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors hover:bg-[#E8A020] hover:border-[#E8A020] hover:text-white hover:scale-110 disabled:hover:bg-transparent disabled:hover:border-[rgba(10,18,10,0.15)] disabled:hover:text-[#C0C8C0] disabled:hover:scale-100"
             style={{
               borderColor: "rgba(10,18,10,0.15)",
               color: active === PROJECTS.length - 1 ? "#C0C8C0" : "#0A120A",
@@ -301,18 +297,15 @@ export default function ProjectsSection() {
 }
 
 function CaseBlock({
-  icon,
   title,
   text,
 }: {
-  icon: string;
   title: string;
   text: string;
 }) {
   return (
     <div>
       <div className="flex items-center gap-2 mb-3">
-        <span className="text-base">{icon}</span>
         <span
           className="text-xs font-bold tracking-widest uppercase"
           style={{ color: "var(--accent)", fontFamily: "Syne, sans-serif" }}

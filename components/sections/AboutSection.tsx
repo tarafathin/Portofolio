@@ -1,12 +1,13 @@
 "use client";
 
 import { PROFILE } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="section-padding"
+      className="section-padding overflow-hidden"
       style={{ background: "var(--cream-50, #FEFCF7)", color: "var(--text-dark)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -26,7 +27,13 @@ export default function AboutSection() {
 
         <div className="mt-12 flex flex-col md:flex-row gap-12 md:gap-20 justify-between items-start">
           {/* Left Column: Heading + Underline + Paragraphs */}
-          <div className="flex flex-col max-w-3xl w-full text-left">
+          <motion.div 
+            className="flex flex-col max-w-3xl w-full text-left"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2
               className="font-display font-black leading-tight mb-6 text-left"
               style={{
@@ -66,14 +73,20 @@ export default function AboutSection() {
                 {PROFILE.bioLong}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Stats stacked vertically on the right */}
-          <div className="flex flex-col gap-5 w-full md:w-auto md:min-w-[240px] lg:pr-12 lg:pt-2">
+          <motion.div 
+            className="flex flex-col gap-5 w-full md:w-auto md:min-w-[240px] lg:pr-12 lg:pt-2"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <Stat value="3.41" label="GPA / 4.00" />
             <Stat value="4+" label="Projects Built" />
             <Stat value="1" label="App on Play Store" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -83,7 +96,7 @@ export default function AboutSection() {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div 
-      className="p-6 rounded-2xl border text-left"
+      className="p-6 rounded-2xl border text-left card-lift transition-all duration-300 hover:border-[#E8A020]"
       style={{
         background: "#FFFFFF",
         borderColor: "rgba(10,18,10,0.06)",

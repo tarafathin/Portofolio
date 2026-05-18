@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { EXPERIENCE } from "@/lib/data";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ExperienceSection() {
   const [modalImage, setModalImage] = useState<string | null>(null);
@@ -16,7 +17,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="section-padding"
+      className="section-padding overflow-hidden"
       style={{ background: "var(--bg-primary)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -24,7 +25,12 @@ export default function ExperienceSection() {
 
         <div className="mt-12 grid md:grid-cols-2 gap-16">
           {/* Heading */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2
               className="font-display font-black leading-tight"
               style={{
@@ -45,7 +51,7 @@ export default function ExperienceSection() {
               Setiap pengalaman — baik di organisasi maupun project nyata —
               membentuk cara saya berpikir, bekerja, dan berkolaborasi.
             </p>
-          </div>
+          </motion.div>
 
           {/* Timeline */}
           <div className="relative">
@@ -57,7 +63,14 @@ export default function ExperienceSection() {
 
             <div className="flex flex-col gap-8">
               {EXPERIENCE.map((exp, i) => (
-                <div key={i} className="flex gap-6 relative group">
+                <motion.div 
+                  key={i} 
+                  className="flex gap-6 relative group"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.15 }}
+                >
                   {/* Dot */}
                   <div
                     className="relative z-10 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 border-2"
@@ -127,7 +140,7 @@ export default function ExperienceSection() {
                       </div>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

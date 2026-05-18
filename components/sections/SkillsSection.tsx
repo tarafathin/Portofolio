@@ -83,7 +83,7 @@ function SkillCard({
 }) {
   return (
     <div
-      className="card-lift p-5 rounded-2xl border relative overflow-hidden"
+      className="card-lift p-5 rounded-2xl border relative overflow-hidden group hover:border-[#E8A020]/50 transition-colors"
       style={{
         background: "var(--bg-surface)",
         borderColor: "var(--border)",
@@ -92,7 +92,7 @@ function SkillCard({
       {/* Icon + category */}
       <div className="flex items-center gap-3 mb-4">
         <span
-          className="text-xl"
+          className="text-xl group-hover:scale-125 transition-transform duration-300"
           style={{ color: "var(--accent)" }}
         >
           {group.icon}
@@ -125,7 +125,7 @@ function SkillCard({
 
       {/* Decorative corner */}
       <div
-        className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full opacity-10"
+        className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full opacity-10 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"
         style={{ background: "var(--accent)" }}
       />
     </div>

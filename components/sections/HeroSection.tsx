@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative h-[100vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-white pt-24 lg:pt-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white py-32 lg:py-24"
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
 
