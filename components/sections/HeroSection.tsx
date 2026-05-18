@@ -19,10 +19,10 @@ export default function HeroSection() {
 
           {/* Main Title */}
           <h1 className="font-black leading-tight text-gray-900 mb-1 font-display tracking-tight text-[clamp(2rem,4vw,3rem)]" style={{ fontFamily: "Syne, sans-serif" }}>
-            I&apos;m <span className="whitespace-nowrap" style={{ color: "#E8A020", position: "relative", display: "inline-block" }}>
+            Hello, I&apos;m <span className="whitespace-nowrap" style={{ color: "#E8A020", position: "relative", display: "inline-block" }}>
               {PROFILE.name}
               <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#E8A020] opacity-50"></span>
-            </span>,
+            </span>
           </h1>
 
           {/* Sub Title */}
