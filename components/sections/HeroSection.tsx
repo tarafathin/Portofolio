@@ -12,7 +12,7 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white py-32 lg:py-24"
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-8">
 
         {/* Left Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-start" style={{ animation: "fadeUp 0.7s ease 0.2s both" }}>
@@ -60,7 +60,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right Content - Photo & Elements */}
-        <div className="w-full lg:w-1/2 relative flex justify-center mt-6 lg:mt-0" style={{ animation: "fadeIn 1s ease 0.5s both" }}>
+        <div className="w-full lg:w-1/2 relative flex justify-center mb-8 lg:mb-0" style={{ animation: "fadeIn 1s ease 0.5s both" }}>
 
           {/* Circular Photo Frame */}
           <div className="relative z-10 w-[30vh] h-[30vh] sm:w-[35vh] sm:h-[35vh] lg:w-[45vh] lg:h-[45vh] rounded-full overflow-hidden border-[6px] md:border-[8px] border-[#E8A020] shadow-2xl bg-gray-100">
