@@ -18,10 +18,18 @@ export default function HeroSection() {
         <div className="w-full lg:w-1/2 flex flex-col items-start" style={{ animation: "fadeUp 0.7s ease 0.2s both" }}>
 
           {/* Main Title */}
-          <h1 className="font-black leading-tight text-gray-900 mb-1 font-display tracking-tight text-[clamp(2rem,4vw,3rem)]" style={{ fontFamily: "Syne, sans-serif" }}>
-            Hello, I&apos;m <span className="whitespace-nowrap" style={{ color: "#E8A020", position: "relative", display: "inline-block" }}>
-              {PROFILE.name}
-              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#E8A020] opacity-50"></span>
+          <h1 className="font-black leading-tight text-gray-900 mb-2 font-display tracking-tight text-[clamp(2.25rem,4vw,3rem)]" style={{ fontFamily: "Syne, sans-serif" }}>
+            Hello, I&apos;m{' '}
+            <span className="block sm:inline mt-1 sm:mt-0" style={{ color: "#E8A020" }}>
+              <span className="relative block sm:inline-block w-fit whitespace-nowrap">
+                {PROFILE.name.split(" ").slice(0, -1).join(" ")}
+                <span className="absolute bottom-1.5 left-0 w-full h-[4px] bg-[#E8A020] opacity-50"></span>
+              </span>
+              <span className="hidden sm:inline">&nbsp;</span>
+              <span className="relative block sm:inline-block w-fit whitespace-nowrap">
+                {PROFILE.name.split(" ").slice(-1)[0]}
+                <span className="absolute bottom-1.5 left-0 w-full h-[4px] bg-[#E8A020] opacity-50"></span>
+              </span>
             </span>
           </h1>
 
