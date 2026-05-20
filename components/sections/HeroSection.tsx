@@ -20,7 +20,13 @@ export default function HeroSection() {
           {/* Main Title */}
           <h1 className="font-black leading-tight text-gray-900 mb-2 font-display tracking-tight text-[clamp(2.25rem,4vw,3rem)]" style={{ fontFamily: "Syne, sans-serif" }}>
             Hello, I&apos;m{' '}
-            <span className="block sm:inline mt-1 sm:mt-0" style={{ color: "#E8A020" }}>
+            {/* Desktop (lg and up): single line */}
+            <span className="hidden lg:inline-block whitespace-nowrap" style={{ color: "#E8A020", position: "relative" }}>
+              {PROFILE.name}
+              <span className="absolute bottom-1.5 left-0 w-full h-[4px] bg-[#E8A020] opacity-50"></span>
+            </span>
+            {/* Mobile/Tablet (below lg): split lines */}
+            <span className="block lg:hidden mt-1 sm:mt-0" style={{ color: "#E8A020" }}>
               <span className="relative block sm:inline-block w-fit whitespace-nowrap">
                 {PROFILE.name.split(" ").slice(0, -1).join(" ")}
                 <span className="absolute bottom-1.5 left-0 w-full h-[4px] bg-[#E8A020] opacity-50"></span>
@@ -60,6 +66,8 @@ export default function HeroSection() {
             <a
               href="/resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
+              download="CV_Tara_Adilah_Fathin.pdf"
               className="flex items-center justify-center border-2 border-gray-300 text-gray-700 bg-white rounded-full px-8 py-3 font-medium hover:border-gray-800 hover:text-gray-900 transition-colors text-sm md:text-base h-[56px]"
             >
               Download CV
